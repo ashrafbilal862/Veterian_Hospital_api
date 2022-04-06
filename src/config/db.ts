@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const connectDB = async () => {
-  const MONGO_URI: string = process.env.MONGO_URI!;
+  const MONGO_URI: string = process.env.MONGO_URI || "mongodb://localhost:27017/veterian_hospital";
   try {
     const isConnected = mongoose.connection.readyState;
     if (isConnected) {
