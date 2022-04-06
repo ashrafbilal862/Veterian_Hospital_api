@@ -1,12 +1,16 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+
 const connectDB = async () => {
+  const MONGO_URI: string = process.env.MONGO_URI!;
   try {
     const isConnected = mongoose.connection.readyState;
     if (isConnected) {
       console.log("MongoDB is connected");
     } else {
       mongoose
-        .connect("mongodb://localhost:27017/veterian_hospital")
+        .connect(MONGO_URI)
         .then((conn) => console.log(`MongoDB Connected: ${conn.connection.host}`))
         .catch((err) => {
           console.error(`Error: ${err.message}`);

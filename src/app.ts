@@ -1,5 +1,7 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import connectDB from "./config/db";
+import dotenv from "dotenv";
+dotenv.config();
 import { notFound, errorHandler } from "./middlewares/errorMiddleware";
 
 // Routes Imports
