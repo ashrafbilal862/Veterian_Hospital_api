@@ -19,7 +19,6 @@ const connectDB = async () => {
     }
   } catch (err) {
     console.log(err);
-    // console.error(`Error: ${err.message}`.red.underline.bold);
     process.exit(1);
   }
 };
